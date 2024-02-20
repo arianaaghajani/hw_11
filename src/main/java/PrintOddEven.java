@@ -6,15 +6,15 @@ public class PrintOddEven {
         this.max = max;
     }
 
-    public static void main(String[] args) {
-        PrintOddEven printer = new PrintOddEven(10);
-
-        Thread evenThread = new Thread(() -> printer.printEven());
-        Thread oddThread = new Thread(() -> printer.printOdd());
-
-        evenThread.start();
-        oddThread.start();
-    }
+//    public static void main(String[] args) {
+//        PrintOddEven printer = new PrintOddEven(10);
+//
+//        Thread evenThread = new Thread(() -> printer.printEven());
+//        Thread oddThread = new Thread(() -> printer.printOdd());
+//
+//        evenThread.start();
+//        oddThread.start();
+//    }
 
     public void printEven() {
         while (number <= max) {
