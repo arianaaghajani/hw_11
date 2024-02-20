@@ -10,4 +10,21 @@ public class PrintOddEven {
 
     }
 
+    public void printEven() {
+        while (number <= max) {
+            synchronized (this) {
+                if (number % 2 == 0) {
+                    System.out.println("Even: " + number);
+                    number++;
+                    this.notify();
+                } else {
+                    try {
+                        this.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
 }
