@@ -27,4 +27,21 @@ public class PrintOddEven {
             }
         }
     }
+    public void printOdd() {
+        while (number <= max) {
+            synchronized (this) {
+                if (number % 2 != 0) {
+                    System.out.println("Odd: " + number);
+                    number++;
+                    this.notify();
+                } else {
+                    try {
+                        this.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
 }
