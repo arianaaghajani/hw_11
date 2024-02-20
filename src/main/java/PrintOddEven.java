@@ -6,4 +6,8 @@ public class PrintOddEven {
         this.max = max;
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
