@@ -26,5 +26,26 @@ public class DeadLock {
             }
         }
     }
+    private static class MyThread2 implements Runnable{
+
+        @Override
+        public void run() {
+            synchronized (lock2){
+                System.out.println("thread 2 : holding lock 2 ...");
+
+                try {
+                    Thread.sleep(100);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+
+                System.out.println("thread 2 : waiting for lock 1 ...");
+
+                synchronized (lock1){
+                    System.out.println("thread 2: holding lock 2 and lock 1");
+                }
+            }
+        }
+    }
 }
 
