@@ -1,4 +1,4 @@
-package Q1;
+package q1;
 
 public class PrintOddEven {
     private int max;
@@ -9,7 +9,7 @@ public class PrintOddEven {
     }
 
     public static void main(String[] args) {
-        Q1.PrintOddEven printer = new Q1.PrintOddEven(10);
+        q1.PrintOddEven printer = new q1.PrintOddEven(10);
 
         Thread evenThread = new Thread(() -> printer.printEven());
         Thread oddThread = new Thread(() -> printer.printOdd());
