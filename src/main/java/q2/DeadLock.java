@@ -4,6 +4,15 @@ public class DeadLock {
     static Object lock1 = new Object();
     static Object lock2 = new Object();
 
+    public static void main(String[] args) {
+
+        Thread thread1=new Thread(new MyThread1());
+        Thread thread2=new Thread(new MyThread2());
+
+        thread1.start();
+        thread2.start();
+    }
+
 
 
     private static class MyThread1 implements Runnable {
